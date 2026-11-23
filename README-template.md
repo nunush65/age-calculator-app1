@@ -13,8 +13,8 @@ Users can:
 
 ### Links
 
-- Solution: [Frontend Mentor](#)
-- Live Site: [View Website](#)
+- Solution: https://github.com/nunush65/age-calculator-app1
+- Live Site:(https://age-calculator-app1-th99.vercel.app)
 
 ## My Process
 
