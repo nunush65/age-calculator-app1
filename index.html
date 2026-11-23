@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+        <title>Frontend Mentor | Age calculator app</title>
+
+        <link href="./src/output.css" rel="stylesheet" />
+
+        <style>
+            .attribution {
+                font-size: 0.6875rem;
+                text-align: center;
+                margin-top: 1rem;
+                position: absolute;
+                bottom: 1rem;
+            }
+
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+    </head>
+
+    <body class="min-h-screen bg-[#f0f0f0] flex flex-col items-center justify-center px-4 py-8">
+        <div class="w-full max-w-[840px] rounded-3xl rounded-br-[100px] bg-white p-6 sm:p-12">
+            <!-- form -->
+            <main>
+                <form id="age-form">
+                    <div class="grid grid-cols-3 gap-3 sm:gap-8">
+                        <!-- day -->
+                        <div class="min-w-0">
+                            <label
+                                for="day"
+                                id="day-label"
+                                class="mb-2 block text-xs font-bold tracking-[0.2em] text-gray-500"
+                            >
+                                DAY
+                            </label>
+
+                            <input
+                                type="number"
+                                id="day"
+                                placeholder="DD"
+                                class="block w-full min-w-0 rounded-md border border-gray-200 px-2 py-3 text-lg font-bold text-gray-900 outline-none focus:border-purple-500 sm:px-3 sm:text-xl"
+                                onkeydown="
+                                    return (
+                                        event.key !== 'e' &&
+                                        event.key !== 'E' &&
+                                        event.key !== '+' &&
+                                        event.key !== '-'
+                                    );
+                                "
+                            />
+
+                            <small
+                                class="error-message mt-2 block min-h-8 break-words text-xs italic text-red-500 sm:text-sm"
+                                id="day-error"
+                            ></small>
+                        </div>
+
+                        <!-- month -->
+                        <div class="min-w-0">
+                            <label
+                                for="month"
+                                id="month-label"
+                                class="mb-2 block text-xs font-bold tracking-[0.2em] text-gray-500"
+                            >
+                                MONTH
+                            </label>
+
+                            <input
+                                type="number"
+                                id="month"
+                                placeholder="MM"
+                                class="block w-full min-w-0 rounded-md border border-gray-200 px-2 py-3 text-lg font-bold text-gray-900 outline-none focus:border-purple-500 sm:px-3 sm:text-xl"
+                                onkeydown="
+                                    return (
+                                        event.key !== 'e' &&
+                                        event.key !== 'E' &&
+                                        event.key !== '+' &&
+                                        event.key !== '-'
+                                    );
+                                "
+                            />
+
+                            <small
+                                class="error-message mt-2 block min-h-8 break-words text-xs italic text-red-500 sm:text-sm"
+                                id="month-error"
+                            ></small>
+                        </div>
+
+                        <!-- year -->
+                        <div class="min-w-0">
+                            <label
+                                for="year"
+                                id="year-label"
+                                class="mb-2 block text-xs font-bold tracking-[0.2em] text-gray-500"
+                            >
+                                YEAR
+                            </label>
+
+                            <input
+                                type="text"
+                                id="year"
+                                inputmode="numeric"
+                                maxlength="4"
+                                placeholder="YYYY"
+                                class="block w-full min-w-0 rounded-md border border-gray-200 px-2 py-3 text-lg font-bold text-gray-900 outline-none focus:border-purple-500 sm:px-3 sm:text-xl"
+                            />
+
+                            <small
+                                class="error-message mt-2 block min-h-8 break-words text-xs italic text-red-500 sm:text-sm"
+                                id="year-error"
+                            ></small>
+                        </div>
+                    </div>
+
+                    <div class="relative mt-8 flex items-center">
+                        <div class="h-px w-full bg-gray-200"></div>
+
+                        <button
+                            type="submit"
+                            class="absolute left-1/2 grid h-16 w-16 -translate-x-1/2 place-items-center rounded-full bg-purple-600 transition hover:bg-black focus:outline-none focus:ring-4 focus:ring-purple-200 sm:left-auto sm:right-0 sm:translate-x-0"
+                            aria-label="Calculate age"
+                        >
+                            <img src="./assets/images/icon-arrow.svg" alt="" class="h-8 w-8" />
+                        </button>
+                    </div>
+                </form>
+
+                <div class="results mt-12">
+                    <div
+                        class="result text-7xl font-extrabold italic leading-tight sm:text-6xl md:text-7xl">
+                        <span class="number text-purple-600" id="years">--</span>
+                        <span class="label text-gray-900">years</span>
+                    </div>
+
+                    <div class="result text-7xl font-extrabold italic leading-tight sm:text-6xl md:text-7xl">
+                        <span class="number text-purple-600" id="months">--</span>
+                        <span class="label text-gray-900">months</span>
+                    </div>
+
+                    <div class="result text-7xl font-extrabold italic leading-tight sm:text-6xl md:text-7xl">
+                        <span class="number text-purple-600" id="days">--</span>
+                        <span class="label text-gray-900">days</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="attribution">
+            Challenge by
+            <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by
+            <a href="#">nunush</a>.
+        </footer>
+
+        <script src="./script.js"></script>
+    </body>
+</html>
